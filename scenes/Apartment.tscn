@@ -1,0 +1,115 @@
+[gd_scene load_steps=8 format=3 uid="uid://co50e3oivm8w3"]
+
+[ext_resource type="MeshLibrary" uid="uid://c8687nn0qww5f" path="res://models/MeshLib/prototype.tres" id="2_e8fk2"]
+[ext_resource type="PackedScene" uid="uid://dovxxvv10ui6c" path="res://models/prototype/Coin_A.gltf" id="3_lvd5f"]
+[ext_resource type="PackedScene" uid="uid://brpt71jl5cg2q" path="res://scenes/player.tscn" id="3_prq4u"]
+[ext_resource type="Script" path="res://scenes/game_manager.gd" id="4_4jr38"]
+
+[sub_resource type="Environment" id="Environment_1l1kg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ov4pi"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_n1whv"]
+size = Vector3(2.72534, 3.08203, 1.26804)
+
+[node name="TestLevel" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1l1kg")
+
+[node name="Player" parent="." instance=ExtResource("3_prq4u")]
+transform = Transform3D(2.02972, 0, -2.51259, 0, 3.23, 0, 2.51259, 0, 2.02972, 30.2258, 3.11662, -0.0172737)
+DEFAULT_SPEED = 6
+JUMP_VELOCITY = 4.0
+SPRINT_SPEED = 9.0
+CROUCH_SPEED = 3.5
+
+[node name="Spotlight3d" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 32.2714, 6.85088, -2.92095)
+light_color = Color(1, 0.83057, 0.722768, 1)
+light_energy = 4.555
+light_bake_mode = 1
+distance_fade_length = 0.0
+spot_range = 9.92919
+spot_angle = 75.0
+spot_angle_attenuation = 0.933033
+
+[node name="Spotlight3d3" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 31.7085, 6.85088, -12.3765)
+light_color = Color(1, 0.83057, 0.722768, 1)
+light_energy = 4.555
+light_bake_mode = 1
+distance_fade_length = 0.0
+spot_range = 12.8398
+spot_angle = 75.0
+spot_angle_attenuation = 0.933033
+
+[node name="Spotlight3d2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 44.4765, 6.85088, -4.48954)
+light_color = Color(1, 0.83057, 0.722768, 1)
+light_energy = 4.555
+light_bake_mode = 1
+distance_fade_length = 0.0
+spot_range = 7.59864
+spot_angle = 75.0
+spot_angle_attenuation = 0.933033
+
+[node name="Spotlight3d4" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 44.4765, 6.76649, -19.2225)
+light_color = Color(1, 0.83057, 0.722768, 1)
+light_energy = 4.555
+light_bake_mode = 1
+distance_fade_length = 0.0
+spot_range = 7.46865
+spot_angle = 75.0
+spot_angle_attenuation = 0.933033
+
+[node name="PrototypeAPT" type="GridMap" parent="."]
+mesh_library = ExtResource("2_e8fk2")
+data = {
+"cells": PackedInt32Array(20, 65529, 655427, 22, 65529, 65, 24, 65529, 65, 25, 65528, 1441857, 25, 65526, 1441857, 24, 65530, 655380, 22, 65530, 655380, 20, 65530, 655380, 18, 65530, 655380, 16, 65530, 655380, 16, 65532, 655380, 18, 65532, 655380, 22, 65532, 655380, 24, 65532, 655380, 24, 65534, 655380, 22, 65534, 655380, 16, 65534, 655380, 18, 0, 655380, 16, 0, 655380, 22, 0, 655380, 24, 0, 655380, 25, 65530, 1441863, 25, 65532, 1048641, 25, 65534, 1048641, 25, 0, 1048641, 24, 1, 65, 22, 1, 65, 20, 1, 65, 18, 1, 65, 14, 65530, 1441812, 14, 65534, 1441812, 14, 0, 1441812, 14, 65528, 1441812, 14, 1, 655425, 13, 0, 1048641, 13, 65534, 1048641, 13, 65530, 1048641, 13, 65528, 1048641, 14, 65527, 65, 13, 65526, 1441857, 13, 65524, 1441857, 14, 65523, 655425, 16, 65523, 65, 18, 65523, 65, 20, 65523, 65, 22, 65523, 65, 24, 65523, 65, 25, 65524, 1441857, 16, 65528, 1441812, 16, 65524, 1441812, 18, 65524, 1441812, 20, 65528, 1441812, 20, 65526, 1441812, 20, 65524, 1441812, 22, 65524, 1441812, 22, 65526, 1441812, 22, 65528, 1441812, 24, 65528, 1441812, 24, 65526, 1441812, 24, 65524, 1441812, 14, 65526, 1441812, 14, 65524, 1441812, 16, 65527, 655425, 17, 65524, 1048641, 17, 65528, 1048641, 262157, 0, 1310785, 262157, 65534, 1310785, 262157, 65532, 1310785, 262157, 65530, 1310785, 262157, 65528, 1310785, 262157, 65526, 1310785, 262157, 65524, 1310785, 262158, 65523, 131137, 262158, 65527, 131137, 262160, 65527, 131137, 262161, 65528, 1179713, 262161, 65526, 1179713, 262161, 65524, 1179713, 262160, 65523, 524353, 262162, 65523, 131137, 262164, 65523, 131137, 262166, 65523, 131137, 262168, 65523, 131137, 262169, 65528, 1179713, 262169, 65526, 1179713, 262169, 65524, 1179713, 262169, 65530, 1179713, 262169, 65532, 1179713, 262169, 65534, 1179713, 262169, 0, 1179713, 262168, 1, 524353, 262166, 1, 524353, 262164, 1, 524353, 262162, 1, 524353, 262160, 1, 524353, 262158, 1, 524353, 262162, 65529, 524353, 262164, 65529, 524353, 262166, 65529, 524353, 262168, 65529, 524353, 20, 65534, 20, 18, 65534, 20, 16, 1, 65, 18, 65528, 1441812, 18, 65529, 655425, 20, 65532, 655380, 20, 0, 655380, 16, 65526, 1441812, 18, 65526, 1441812, 14, 65532, 1441812, 13, 65532, 1048641, 17, 65526, 1441859)
+}
+metadata/_editor_floor_ = Vector3(0, 3, 0)
+
+[node name="objects" type="GridMap" parent="PrototypeAPT"]
+mesh_library = ExtResource("2_e8fk2")
+cell_size = Vector3(0.75, 1, 0.75)
+data = {
+"cells": PackedInt32Array(65579, 65531, 1048626, 65595, 65531, 1048625, 65591, 65528, 262177, 131126, 65528, 262177, 65590, 65528, 262177, 65599, 1, 720929, 65599, 2, 720929, 131135, 2, 720929, 65586, 3, 655376, 65589, 65518, 1441807, 65582, 65511, 14)
+}
+metadata/_editor_floor_ = Vector3(0, 4, 0)
+
+[node name="roof" type="GridMap" parent="PrototypeAPT"]
+visible = false
+mesh_library = ExtResource("2_e8fk2")
+cell_size = Vector3(4, 2, 4)
+data = {
+"cells": PackedInt32Array(196615, 65530, 1441823, 196615, 65531, 1441823, 196615, 65532, 1441823, 196615, 65533, 1441823, 196615, 65534, 1441823, 196615, 65535, 1441823, 196615, 0, 1441823, 196616, 65530, 1441823, 196616, 65531, 1441823, 196616, 65532, 1441823, 196616, 65533, 1441823, 196616, 65534, 1441823, 196616, 65535, 1441823, 196616, 0, 1441823, 196617, 65530, 1441823, 196617, 65531, 1441823, 196617, 65532, 1441823, 196617, 65533, 1441823, 196617, 65534, 1441823, 196617, 65535, 1441823, 196617, 0, 1441823, 196618, 65530, 1441823, 196618, 65531, 1441823, 196618, 65532, 1441823, 196618, 65533, 1441823, 196618, 65534, 1441823, 196618, 65535, 1441823, 196618, 0, 1441823, 196619, 65530, 1441823, 196619, 65531, 1441823, 196619, 65532, 1441823, 196619, 65533, 1441823, 196619, 65534, 1441823, 196619, 65535, 1441823, 196619, 0, 1441823, 196620, 65530, 1441823, 196620, 65531, 1441823, 196620, 65532, 1441823, 196620, 65533, 1441823, 196620, 65534, 1441823, 196620, 65535, 1441823, 196620, 0, 1441823, 196614, 65528, 1441823, 196614, 65529, 1441823, 196614, 65530, 1441823, 196614, 65531, 1441823, 196614, 65532, 1441823, 196614, 65533, 1441823, 196614, 65534, 1441823, 196614, 65535, 1441823, 196614, 0, 1441823, 196615, 65528, 1441823, 196615, 65529, 1441823, 196616, 65528, 1441823, 196616, 65529, 1441823, 196617, 65528, 1441823, 196617, 65529, 1441823, 196618, 65528, 1441823, 196618, 65529, 1441823, 196619, 65528, 1441823, 196619, 65529, 1441823, 196620, 65528, 1441823, 196620, 65529, 1441823, 196621, 65528, 1441823, 196621, 65529, 1441823, 196621, 65530, 1441823, 196621, 65531, 1441823, 196621, 65532, 1441823, 196621, 65533, 1441823, 196621, 65534, 1441823, 196621, 65535, 1441823, 196621, 0, 1441823)
+}
+metadata/_editor_floor_ = Vector3(0, 3, 0)
+
+[node name="Coin_A2" parent="." instance=ExtResource("3_lvd5f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.5779, 2.67597, -10.4475)
+
+[node name="Area3D" type="Area3D" parent="Coin_A2"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Coin_A2/Area3D"]
+shape = SubResource("BoxShape3D_ov4pi")
+
+[node name="exitTrigger" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36.7429, 2.25318, 2.01391)
+
+[node name="Area3D" type="Area3D" parent="exitTrigger"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="exitTrigger/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.279419, 1.04102, 0.108047)
+shape = SubResource("BoxShape3D_n1whv")
+
+[node name="GameManager" type="Node3D" parent="."]
+script = ExtResource("4_4jr38")
+
+[connection signal="body_entered" from="Coin_A2/Area3D" to="Player" method="_on_area_3d_body_entered"]

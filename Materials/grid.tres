@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cqixggdl7g02o"]
+
+[ext_resource type="Texture2D" uid="uid://b8klr6kgawjar" path="res://test_scene_assets/whiteGrid.jpg" id="1_nhogj"]
+
+[resource]
+albedo_texture = ExtResource("1_nhogj")
+uv1_offset = Vector3(4.5, 4.5, 4.5)
+uv1_triplanar = true
+uv1_world_triplanar = true

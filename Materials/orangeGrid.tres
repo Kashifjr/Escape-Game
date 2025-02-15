@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cb4dr3jeohcdp"]
+
+[ext_resource type="Texture2D" uid="uid://4ok8trfh4nb3" path="res://test_scene_assets/orangeGrid.png" id="1_n3kxg"]
+
+[resource]
+albedo_texture = ExtResource("1_n3kxg")
+uv1_offset = Vector3(1.032, 0.037, 0.314)
+uv1_triplanar = true
+uv1_world_triplanar = true
